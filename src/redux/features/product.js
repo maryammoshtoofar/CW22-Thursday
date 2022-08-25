@@ -8,7 +8,12 @@ const initialState = {
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    axios.get("http://localhost:5000/products").then((res) => res.data);
+    try {
+      const res = await axios.get("http://localhost:5000/products");
+      return res.data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 );
 

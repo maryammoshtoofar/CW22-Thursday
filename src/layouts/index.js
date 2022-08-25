@@ -5,7 +5,6 @@ export default function SharedLayout() {
   return (
     <div>
       <Header />
-      SharedLayout
       <Outlet />
     </div>
   );
